@@ -1,0 +1,7 @@
+{
+  "name": "geo-corona-backend",
+  "version": "1.0.0",
+  "main": "app.js",
+  "author": "amirali monjar",
+  "license": "MIT"
+}
