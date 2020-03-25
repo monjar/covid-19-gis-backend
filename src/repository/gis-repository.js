@@ -5,7 +5,7 @@ let gisData = require("../../resources/repository.json");
 console.log(gisData);
 
 const getAllPolygons = () => {
-  return gisData;
+  return gisData.features;
 };
 
 const addPolygon = polygon => {

@@ -7,8 +7,9 @@ router.use(function timeLog(req, res, next) {
 });
 
 router.get("/testpoint", function(req, res) {
-  service.testPoint(req.query);
-  res.send(req.query);
+  let point = [req.query.long, req.query.lat];
+  const response = service.testPoint(point);
+  res.send(response);
 });
 
 router.put("/addpolygon", function(req, res) {
