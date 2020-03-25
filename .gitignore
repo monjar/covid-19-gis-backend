@@ -6,6 +6,8 @@
 # yarn
 node_modules
 yarn.lock
+
+#log
 *.log
 *.gz
 
