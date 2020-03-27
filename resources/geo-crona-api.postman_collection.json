@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "2d88c9f1-4df1-4bad-bbea-8eb4e4d1e1dc",
+		"name": "geo-crona-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "testPoint",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://geo-crona-backend.herokuapp.com/gis/testpoint?long=51.43592834472656&lat=35.72602928962275",
+					"protocol": "https",
+					"host": [
+						"geo-crona-backend",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"gis",
+						"testpoint"
+					],
+					"query": [
+						{
+							"key": "long",
+							"value": "51.43592834472656"
+						},
+						{
+							"key": "lat",
+							"value": "35.72602928962275"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addpolygon",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"Feature\",\n    \"properties\": {\n    \"name\": \"NewPolygon\"\n    },\n    \"geometry\": {\n    \"type\": \"Polygon\",\n    \"coordinates\": [\n        [\n        [\n            53.514404296875,\n            34.59704151614417\n        ],\n        [\n            51.416015625,\n            34.854382885097905\n        ],\n        [\n            51.6851806640625,\n            33.82023008524739\n        ],\n        [\n            53.514404296875,\n            34.59704151614417\n        ]\n        ]\n    ]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://geo-crona-backend.herokuapp.com/gis/addpolygon",
+					"protocol": "https",
+					"host": [
+						"geo-crona-backend",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"gis",
+						"addpolygon"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "2e94e04f-bb33-426b-9be0-47cb07003716",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4da5b2ef-3450-4959-b71a-8655792eee9b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
