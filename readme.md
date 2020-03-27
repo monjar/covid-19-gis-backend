@@ -38,19 +38,33 @@ The repositories layer handles data manipulation.
 To run the app on your computer you should follow these steps in your terminal:
 
 1. Clone the project
-   `git clone https://github.com/monjar/covid-19-gis-backend.git`
+   ```
+   git clone https://github.com/monjar/covid-19-gis-backend.git
+   ```
 2. Go to project root
-   `cd covid-19-gis-backend`
+   ```
+   cd covid-19-gis-backend
+   ```
 3. Create the ".env" file and set your port
-   `echo 'PORT = 8080' >.env`
+   ```
+   echo 'PORT = 8080' >.env
+   ```
 4. Install node modules
-   `npm install`
+   ```
+   npm install
+   ```
    or
-   `yarn install`
+   ```
+   yarn install
+   ```
 5. Start app
-   `npm start`
+   ```
+   npm start
+   ```
    or
-   `yarn start`
+   ```
+   yarn start
+   ```
 
 ## Sample Requests
 
