@@ -1,13 +1,8 @@
-const winston = require("winston");
 const fs = require("fs");
 let gisData = require("../../resources/repository.json");
+const loggerConfig = require("../config/logger-config");
 
-const logger = winston.createLogger({
-  transports: [
-    new winston.transports.Console(),
-    new winston.transports.File({ filename: "Repository.log" })
-  ]
-});
+const logger = loggerConfig("repository");
 
 const getAllPolygons = () => {
   return gisData.features;

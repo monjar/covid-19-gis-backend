@@ -1,13 +1,8 @@
-const winston = require("winston");
 const turf = require("@turf/turf");
 const repository = require("../repository/gis-repository");
+const loggerConfig = require("../config/logger-config");
 
-const logger = winston.createLogger({
-  transports: [
-    new winston.transports.Console(),
-    new winston.transports.File({ filename: "Service.log" })
-  ]
-});
+const logger = loggerConfig("service");
 
 const filterPolygonsByPoint = point => {
   return polygon => {

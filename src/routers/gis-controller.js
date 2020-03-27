@@ -1,8 +1,21 @@
 const express = require("express");
 const service = require("../services/gis-service");
+const loggerConfig = require("../config/logger-config");
+
+const logger = loggerConfig("service");
+
 const router = express.Router();
 
-router.use(function timeLog(req, res, next) {
+router.use((req, res, next) => {
+  logger.info(
+    req.protocol +
+      " " +
+      req.method +
+      " Request To " +
+      req.url +
+      " | Time: " +
+      new Date()
+  );
   next();
 });
 
