@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Covid-19 GIS API</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body style="position:absolute; width:100%; height: 100%;">
+    <div
+      class="container d-flex align-items-center flex-column justify-content-center h-100 bg-dark text-white col-12"
+    >
+      <div class=" h1 mb-1">
+        Covid-19 API Manual
+      </div>
+      <div class=" h4 mb-5">
+        Welcome
+      </div>
+      <div class=" h3 mb-2">
+        Methods
+      </div>
+      <div class="d-flex align-items-center flex-column justify-content-center">
+        <div
+          class="d-flex align-items-center flex-column justify-content-center mb-4"
+          style="width:100%; height: 100%;"
+        >
+          1. Testing a point
+          <ul class="list-group mt-2">
+            <li class="list-group-item list-group-item-info">
+              Url: /gis/testpoint
+            </li>
+            <li class="list-group-item list-group-item-info">
+              Method: GET
+            </li>
+            <li class="list-group-item list-group-item-info">
+              Params: lat & long
+            </li>
+            <li class="list-group-item list-group-item-info">
+              Example: /gis/testpoint?lat=2&long=50
+            </li>
+          </ul>
+        </div>
+        <div
+          class="d-flex align-items-center flex-column justify-content-center mb-4"
+        >
+          2. Adding a polygon to server
+          <ul class="list-group mt-2">
+            <li class="list-group-item list-group-item-info">
+              Url: /gis/addpolygon
+            </li>
+            <li class="list-group-item list-group-item-info">
+              Method: PUT
+            </li>
+            <li class="list-group-item list-group-item-info">
+              Body: GeoJson-Polygon
+            </li>
+            <li class="list-group-item list-group-item-info">
+              Example: /gis/addpolygon
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
