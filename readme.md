@@ -19,7 +19,7 @@ API is currently accessible on [Heroku](https://geo-crona-backend.herokuapp.com/
 
 ## Architecture
 
-This application ha a layered architecture that consists of Controllers, Services and Repositories.
+This application has a layered architecture that consists of Controllers, Services and Repositories.
 
 #### Controllers
 
