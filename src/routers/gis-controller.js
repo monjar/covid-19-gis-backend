@@ -33,10 +33,9 @@ router.get("/testpoint", (req, res) => {
 });
 
 router.put("/addpolygon", (req, res) => {
-  service.addPolygon(req.body);
   validator
     .validatePolygon(req.body)
-    .then(result => res.send(JSON.stringify(req.body)))
+    .then(result => service.addPolygon(req.body))
     .catch(err => sendError(res, err.message, err.code));
 });
 
