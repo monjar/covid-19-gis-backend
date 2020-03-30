@@ -21,19 +21,22 @@ router.use((req, res, next) => {
   next();
 });
 
-router.get("/testpoint", function(req, res) {
+router.get("/testpoint", (req, res) => {
   let point = [req.query.long, req.query.lat];
   validator
     .validatePoint(point)
-    .then(() => res.send(service.testPoint(point)))
+    .then(result => {
+      service.testPoint(point);
+      res.send(service.testPoint(point));
+    })
     .catch(err => sendError(res, err.message, err.code));
 });
 
-router.put("/addpolygon", function(req, res) {
+router.put("/addpolygon", (req, res) => {
   service.addPolygon(req.body);
   validator
     .validatePolygon(req.body)
-    .then(() => res.send(JSON.stringify(req.body)))
+    .then(result => res.send(JSON.stringify(req.body)))
     .catch(err => sendError(res, err.message, err.code));
 });
 

@@ -6,8 +6,9 @@ const logger = loggerConfig("Validator");
 const validator = {
   validatePoint: point => {
     return new Promise((resolve, reject) => {
-      if (isPointOK(point)) resolve(true);
-      else {
+      if (isPointOK(point)) {
+        resolve(true);
+      } else {
         logger.info("GET testpoint request rejected");
         reject(ErrorCreator.pointReqError());
       }

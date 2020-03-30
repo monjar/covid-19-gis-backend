@@ -16,12 +16,16 @@ const notNull = element => {
 
 const searchForSuitedPolygons = point => {
   const polys = repository.getAllPolygons();
+
   const turfPoint = turf.point(point);
+
   return polys.map(filterPolygonsByPoint(turfPoint)).filter(notNull);
 };
 
 const testPoint = point => {
-  return searchForSuitedPolygons(point);
+  const insidePolys = searchForSuitedPolygons(point);
+  logger.info(insidePolys);
+  return insidePolys;
 };
 
 const addPolygon = polygon => {
