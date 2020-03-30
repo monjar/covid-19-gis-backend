@@ -17,7 +17,7 @@ const saveDataToFile = () => {
   logger.debug("writing to file...");
   fs.writeFile("resources/repository.json", JSON.stringify(gisData), error => {
     if (error) logger.error(error);
-    else logger.info("gisData wrote on file");
+    else logger.debug("gisData wrote on file");
   });
 };
 

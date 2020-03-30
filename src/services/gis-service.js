@@ -30,6 +30,7 @@ const testPoint = point => {
 
 const addPolygon = polygon => {
   repository.addPolygon(polygon);
+  return `Polygon with name \"${polygon.properties.name}\" added.`;
 };
 
 module.exports = {
