@@ -21,9 +21,7 @@ const searchForSuitedPolygons = point => {
 };
 
 const testPoint = point => {
-  const insidePolys = searchForSuitedPolygons(point);
-  logger.info(insidePolys);
-  return insidePolys;
+  return searchForSuitedPolygons(point);
 };
 
 const addPolygon = polygon => {

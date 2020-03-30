@@ -2,9 +2,11 @@ const express = require("express");
 const service = require("../services/gis-service");
 const loggerConfig = require("../config/logger-config");
 
-const logger = loggerConfig("service");
+const logger = loggerConfig("Controller");
 
 const router = express.Router();
+
+const validator = require("../utils/validators/gis-validator");
 
 router.use((req, res, next) => {
   logger.info(
@@ -21,13 +23,23 @@ router.use((req, res, next) => {
 
 router.get("/testpoint", function(req, res) {
   let point = [req.query.long, req.query.lat];
-  const response = service.testPoint(point);
-  res.send(response);
+  validator
+    .validatePoint(point)
+    .then(() => res.send(service.testPoint(point)))
+    .catch(err => sendError(res, err.message, err.code));
 });
 
 router.put("/addpolygon", function(req, res) {
   service.addPolygon(req.body);
-  res.send(JSON.stringify(req.body));
+  validator
+    .validatePolygon(req.body)
+    .then(() => res.send(JSON.stringify(req.body)))
+    .catch(err => sendError(res, err.message, err.code));
 });
+
+const sendError = (res, msg, code) => {
+  res.status(code);
+  res.send(msg);
+};
 
 module.exports = router;
