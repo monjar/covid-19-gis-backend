@@ -5,7 +5,7 @@ Originally this project is the first homework of Internet-Engineering class.
 
 ## API List
 
-### 1. POST - /gis/addpolygon
+### 1. PUT - /gis/addpolygon
 
 > Adds an infected area to the app
 
